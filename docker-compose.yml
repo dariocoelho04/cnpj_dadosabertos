@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: postgres:14
+    container_name: empresas_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: PstgsqlAdm2024!$
+      POSTGRES_DB: empresasbr_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    networks:
+      - cnpj_network
+
+networks:
+  cnpj_network:
+    driver: bridge
